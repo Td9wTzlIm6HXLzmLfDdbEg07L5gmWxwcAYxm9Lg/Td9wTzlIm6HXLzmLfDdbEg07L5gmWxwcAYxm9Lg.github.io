@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Delta Math</title>
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f13;
+      --bg2: #18181f;
+      --bg3: #1e1e28;
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f0f0;
+      --muted: #888;
+      --accent: #7c6fff;
+      --accent2: #ff5f5f;
+      --green: #1fbb8a;
+      --radius: 14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      background: rgba(15,15,19,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    nav img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    nav h1 {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #fff 40%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-back {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .hero-text {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero-text .eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(124,111,255,0.12);
+      border: 1px solid rgba(124,111,255,0.25);
+      border-radius: 20px;
+      padding: 4px 12px;
+      margin-bottom: 14px;
+    }
+    .hero-text h2 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #fff 40%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 14px;
+    }
+    .hero-text p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin-bottom: 14px;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .icon-purple { background: rgba(124,111,255,0.15); color: var(--accent); }
+    .icon-red    { background: rgba(255,95,95,0.15);  color: var(--accent2); }
+    .icon-green  { background: rgba(31,187,138,0.15); color: var(--green); }
+    .icon-yellow { background: rgba(250,199,117,0.15); color: #fac775; }
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .card p + p { margin-top: 8px; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .stat-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 14px;
+      text-align: center;
+    }
+    .stat-box .num {
+      font-size: 26px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff 40%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+    .stat-box .label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .rules-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    .rules-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--muted);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .rules-list li:last-child { border-bottom: none; }
+    .rules-list li i {
+      color: var(--green);
+      margin-top: 2px;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+    .badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      color: var(--muted);
+    }
+
+    .shoutout {
+      background: var(--bg2);
+      border: 1px solid rgba(124,111,255,0.3);
+      border-radius: var(--radius);
+      padding: 22px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .shoutout p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .shoutout p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 36px;
+      line-height: 1.6;
+    }
+    .footer-note a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <img src="images/logo.jpg" alt="logo">
+    <h1>Delta Math</h1>
+    <a href="index.html" class="nav-back">
+      <i class="fas fa-arrow-left" style="font-size:11px"></i> Back
+    </a>
+  </nav>
+
+  <div class="page">
+
+    <div class="hero-text">
+      <span class="eyebrow">About this site</span>
+      <h2>Games. At school.<br>No cap.</h2>
+      <p>Delta Math is a free unblocked game site built for students who just need a break between classes — or, you know, during them. We're not judging.</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <span class="num">120+</span>
+        <span class="label">Games available</span>
+      </div>
+      <div class="stat-box">
+        <span class="num">0</span>
+        <span class="label">Downloads needed</span>
+      </div>
+      <div class="stat-box">
+        <span class="num">100%</span>
+        <span class="label">Free forever</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-purple"><i class="fas fa-gamepad"></i></div>
+        <h3>What is Delta Math?</h3>
+      </div>
+      <p>Delta Math is a game hub disguised as a homework helper. It's a collection of the best browser games — action, racing, sports, puzzles, idle games, and more — all playable directly in your browser with no installs, no accounts, and no nonsense.</p>
+      <p>Everything runs in your tab. Just click and play.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-green"><i class="fas fa-shield-halved"></i></div>
+        <h3>Why is it "unblocked"?</h3>
+      </div>
+      <p>Most school networks block gaming sites — but they can't block everything. Delta Math is designed to fly under the radar so you can get your game on without the IT department ruining your day.</p>
+      <p>That said: <strong style="color: var(--text);">don't be dumb about it.</strong> Pay attention in class, do your work, and use this during lunch or free periods. This site isn't responsible for your grades. That's on you.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-red"><i class="fas fa-circle-xmark"></i></div>
+        <h3>What we can't add</h3>
+      </div>
+      <p>People ask all the time for games like Fortnite, NBA 2K, Call of Duty, Roblox, and similar titles. Here's the thing — those games are massive native applications. They can't run in a browser tab.</p>
+      <p>What we <em style="color: var(--text);">can</em> add: browser-based games, HTML5 games, and embedded titles. Keep the suggestions coming and we'll keep adding what's actually possible.</p>
+      <div class="badge-row">
+        <span class="badge">❌ Fortnite</span>
+        <span class="badge">❌ Roblox</span>
+        <span class="badge">❌ NBA 2K</span>
+        <span class="badge">❌ Call of Duty</span>
+        <span class="badge">✅ OvO</span>
+        <span class="badge">✅ Slope</span>
+        <span class="badge">✅ Retro Bowl</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-yellow"><i class="fas fa-star"></i></div>
+        <h3>How to suggest a game</h3>
+      </div>
+      <p>Got a game you want added? Send it over. If it runs in a browser, there's a good chance we can get it on here. If it's a native app, it's not happening — but we appreciate the thought.</p>
+      <ul class="rules-list">
+        <li><i class="fas fa-check"></i> Has to be playable in a browser tab</li>
+        <li><i class="fas fa-check"></i> Has to actually be fun (obvious, but still)</li>
+        <li><i class="fas fa-check"></i> Not already on the site (check first)</li>
+        <li><i class="fas fa-check"></i> Nothing that would get the site shut down immediately</li>
+      </ul>
+    </div>
+
+    <div class="shoutout">
+      <p>Built for students, by someone who also sat in class bored.<br>
+      <strong>No login. No cost. No tracking.</strong><br>
+      Just vibes and browser games.</p>
+    </div>
+
+    <div class="footer-note">
+      Delta Math &mdash; not affiliated with the actual DeltaMath math platform.<br>
+      We just thought the name was funny. <a href="index.html">← Back to games</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
