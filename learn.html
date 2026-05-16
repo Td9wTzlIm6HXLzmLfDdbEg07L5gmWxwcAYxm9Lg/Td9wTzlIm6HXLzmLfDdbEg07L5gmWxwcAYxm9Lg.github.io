@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduLearn Hidden Portal</title>
+
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Segoe UI,sans-serif;
+background:#05070d;
+color:white;
+overflow:hidden;
+}
+
+.bg{
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at center,#1d3557 0%,transparent 50%),
+linear-gradient(135deg,#05070d,#0b1220);
+z-index:-1;
+}
+
+.container{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:30px;
+}
+
+.small{
+color:#5ef2c3;
+font-weight:700;
+letter-spacing:2px;
+margin-bottom:20px;
+font-size:12px;
+}
+
+h1{
+font-size:70px;
+margin-bottom:20px;
+background:linear-gradient(to right,#ffffff,#8fb5ff,#5ef2c3);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+p{
+max-width:700px;
+font-size:20px;
+line-height:1.7;
+color:#9ca9c7;
+margin-bottom:40px;
+}
+
+.portal{
+width:180px;
+height:180px;
+border-radius:50%;
+background:
+radial-gradient(circle,#5ef2c3 0%,#6d8cff 60%,transparent 70%);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:60px;
+animation:pulse 3s infinite;
+box-shadow:0 0 80px rgba(109,140,255,0.5);
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+.secret{
+position:absolute;
+top:12px;
+right:12px;
+width:18px;
+height:18px;
+border-radius:50%;
+background:rgba(255,255,255,0.05);
+cursor:pointer;
+}
+
+.secret:hover{
+background:#5ef2c3;
+box-shadow:0 0 14px #5ef2c3;
+}
+
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="container">
+
+<div class="small">
+ADVANCED LEARNING PORTAL
+</div>
+
+<h1>
+Knowledge Beyond Limits
+</h1>
+
+<p>
+You discovered the hidden EduLearn portal —
+a place reserved for curious minds and advanced learners.
+Continue deeper into the learning experience.
+</p>
+
+<div class="portal">
+<i class="fa-solid fa-lightbulb"></i>
+</div>
+
+</div>
+
+<!-- SECRET BUTTON -->
+<div class="secret" onclick="window.location.href='304072.html'"></div>
+
+</body>
+</html>
