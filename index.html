@@ -1,336 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EduLearn - Online Learning Platform</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduLearn Academy</title>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9308649654279660" 
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
 
-    :root {
-      --bg: #0f0f13;
-      --bg2: #18181f;
-      --bg3: #1e1e28;
-      --border: rgba(255,255,255,0.08);
-      --text: #f0f0f0;
-      --muted: #888;
-      --accent: #7c6fff;
-      --accent2: #ff5f5f;
-      --green: #1fbb8a;
-      --radius: 14px;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      min-height: 100vh;
-    }
+:root{
+--bg:#070b14;
+--card:#111827;
+--card2:#172033;
+--accent:#6d8cff;
+--accent2:#5ef2c3;
+--text:#f3f7ff;
+--muted:#8d98b3;
+--border:rgba(255,255,255,0.08);
+}
 
-    /* NAV */
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 20px;
-      background: rgba(15,15,19,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 200;
-    }
-    .nav-logo {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      background: linear-gradient(135deg, #fff 40%, var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-decoration: none;
-    }
-    .nav-links {
-      display: flex;
-      gap: 6px;
-      margin-left: auto;
-    }
-    .nav-links a {
-      flex-shrink: 0;
-      padding: 6px 14px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: var(--bg3);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: color 0.15s, background 0.15s, border-color 0.15s;
-    }
-    .nav-links a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+body{
+font-family:Inter,Segoe UI,sans-serif;
+background:
+radial-gradient(circle at top left,#14213d 0%,transparent 30%),
+radial-gradient(circle at bottom right,#1d3557 0%,transparent 30%),
+var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
 
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 70px 20px 60px;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero .eyebrow {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(124,111,255,0.12);
-      border: 1px solid rgba(124,111,255,0.25);
-      border-radius: 20px;
-      padding: 4px 12px;
-      margin-bottom: 18px;
-    }
-    .hero h2 {
-      font-size: 42px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      line-height: 1.1;
-      background: linear-gradient(135deg, #fff 40%, var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 16px;
-    }
-    .hero p {
-      font-size: 16px;
-      color: var(--muted);
-      margin-bottom: 28px;
-      line-height: 1.6;
-    }
-    .hero-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 11px 24px;
-      border-radius: 24px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: opacity 0.15s;
-    }
-    .hero-btn:hover { opacity: 0.88; }
+/* NAV */
 
-    /* SECTION */
-    .section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .section-header h2 { font-size: 15px; font-weight: 700; color: var(--text); }
-    .count-pill {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2px 9px;
-      font-size: 11px;
-      color: var(--muted);
-    }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+position:sticky;
+top:0;
+z-index:999;
+backdrop-filter:blur(12px);
+background:rgba(7,11,20,0.7);
+border-bottom:1px solid var(--border);
+}
 
-    /* COURSE CARDS */
-    .courses {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
-    }
-    .course-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .course-card:hover {
-      border-color: rgba(124,111,255,0.4);
-      transform: translateY(-3px);
-    }
-    .course-image {
-      height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      border-bottom: 1px solid var(--border);
-    }
-    .course-image.web  { background: rgba(124,111,255,0.12); }
-    .course-image.data { background: rgba(31,187,138,0.12); }
-    .course-image.design { background: rgba(255,95,95,0.12); }
-    .course-body { padding: 16px; }
-    .course-body h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
-    .course-body p { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px; }
-    .course-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      background: var(--bg3);
-    }
+.logo{
+font-size:24px;
+font-weight:800;
+background:linear-gradient(90deg,#fff,var(--accent2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-    /* ABOUT + CONTACT */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
-    }
-    .info-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-    }
-    .info-card .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .card-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-    .icon-purple { background: rgba(124,111,255,0.15); color: var(--accent); }
-    .icon-green  { background: rgba(31,187,138,0.15);  color: var(--green); }
-    .info-card h3 { font-size: 15px; font-weight: 700; color: var(--text); }
-    .info-card p  { font-size: 14px; color: var(--muted); line-height: 1.65; }
-    .info-card p + p { margin-top: 6px; }
-    .info-card a { color: var(--accent); text-decoration: none; }
-    .info-card a:hover { text-decoration: underline; }
+.nav-links{
+display:flex;
+gap:20px;
+}
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 24px 20px;
-      margin-top: 20px;
-    }
-    footer p { font-size: 12px; color: var(--muted); margin: 3px 0; }
-  </style>
+.nav-links a{
+color:var(--muted);
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:white;
+}
+
+/* HERO */
+
+.hero{
+min-height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+}
+
+.badge{
+padding:8px 18px;
+border-radius:50px;
+background:rgba(109,140,255,0.15);
+border:1px solid rgba(109,140,255,0.3);
+color:#9db4ff;
+font-size:12px;
+font-weight:700;
+letter-spacing:1px;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:70px;
+line-height:1;
+max-width:900px;
+margin-bottom:25px;
+background:linear-gradient(to right,#ffffff,#8fb5ff,#5ef2c3);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:20px;
+color:var(--muted);
+max-width:700px;
+line-height:1.7;
+margin-bottom:40px;
+}
+
+.hero-btn{
+padding:16px 34px;
+border-radius:50px;
+border:none;
+background:linear-gradient(135deg,var(--accent),#5ef2c3);
+color:white;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+text-decoration:none;
+box-shadow:0 10px 30px rgba(109,140,255,0.3);
+}
+
+.hero-btn:hover{
+transform:translateY(-4px) scale(1.03);
+}
+
+/* COURSES */
+
+.section{
+max-width:1300px;
+margin:auto;
+padding:80px 30px;
+}
+
+.section-title{
+font-size:38px;
+margin-bottom:50px;
+text-align:center;
+}
+
+.courses{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:linear-gradient(145deg,var(--card),var(--card2));
+border:1px solid var(--border);
+border-radius:24px;
+padding:30px;
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+width:250px;
+height:250px;
+background:radial-gradient(circle,rgba(109,140,255,0.2),transparent 70%);
+top:-120px;
+right:-120px;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#5ef2c3;
+}
+
+.icon{
+font-size:42px;
+margin-bottom:20px;
+color:#8fb5ff;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.card p{
+color:var(--muted);
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.tag{
+display:inline-block;
+padding:8px 14px;
+border-radius:30px;
+background:rgba(255,255,255,0.05);
+font-size:12px;
+color:#cfd7ff;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:60px;
+}
+
+.stat{
+background:rgba(255,255,255,0.03);
+border:1px solid var(--border);
+padding:30px;
+border-radius:22px;
+text-align:center;
+}
+
+.stat h2{
+font-size:42px;
+margin-bottom:10px;
+color:#5ef2c3;
+}
+
+.stat p{
+color:var(--muted);
+}
+
+/* SECRET BUTTON */
+
+.secret-btn{
+position:fixed;
+bottom:18px;
+right:18px;
+width:18px;
+height:18px;
+border-radius:50%;
+background:rgba(255,255,255,0.05);
+cursor:pointer;
+transition:.3s;
+}
+
+.secret-btn:hover{
+background:#5ef2c3;
+box-shadow:0 0 15px #5ef2c3;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px;
+text-align:center;
+color:var(--muted);
+border-top:1px solid var(--border);
+margin-top:60px;
+}
+
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="nav-logo">EduLearn</a>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#courses">Courses</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav>
+<div class="logo">EduLearn Academy</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <span class="eyebrow">Online Learning Platform</span>
-    <h2>Learn anything,<br>anywhere, anytime.</h2>
-    <p>High-quality courses taught by industry experts.<br>Start learning today — it's free.</p>
-    <a href="/304072.html" class="hero-btn">
-      <i class="fa-solid fa-play" style="font-size:11px"></i> Get Started
-    </a>
-  </section>
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Courses</a>
+<a href="#">Programs</a>
+<a href="#">Resources</a>
+</div>
+</nav>
 
-  <!-- COURSES -->
-  <section id="courses" class="section">
-    <div class="section-header">
-      <h2>Popular Courses</h2>
-      <span class="count-pill">3 courses</span>
-    </div>
-    <div class="courses">
+<section class="hero">
 
-      <div class="course-card">
-        <div class="course-image web"><i class="fas fa-code"></i></div>
-        <div class="course-body">
-          <h3>Web Development</h3>
-          <p>Master HTML, CSS, and JavaScript to build modern websites and apps.</p>
-          <span class="course-tag">Beginner friendly</span>
-        </div>
-      </div>
+<div class="badge">
+NEXT GENERATION EDUCATION
+</div>
 
-      <div class="course-card">
-        <div class="course-image data"><i class="fas fa-chart-line"></i></div>
-        <div class="course-body">
-          <h3>Data Science</h3>
-          <p>Learn Python, statistics, and machine learning to analyze data effectively.</p>
-          <span class="course-tag">Intermediate</span>
-        </div>
-      </div>
+<h1>
+Master Real Skills For The Future
+</h1>
 
-      <div class="course-card">
-        <div class="course-image design"><i class="fas fa-pen-nib"></i></div>
-        <div class="course-body">
-          <h3>Graphic Design</h3>
-          <p>Unleash your creativity with design principles and modern tools.</p>
-          <span class="course-tag">All levels</span>
-        </div>
-      </div>
+<p>
+Join thousands of students learning web development, artificial intelligence,
+design, business, and data science through immersive interactive lessons.
+</p>
 
-    </div>
-  </section>
+<a href="/304072.html" class="hero-btn">
+<i class="fa-solid fa-graduation-cap"></i>
+Start Learning
+</a>
 
-  <!-- ABOUT + CONTACT -->
-  <section class="section">
-    <div class="info-grid">
+</section>
 
-      <div class="info-card" id="about">
-        <div class="card-header">
-          <div class="card-icon icon-purple"><i class="fas fa-graduation-cap"></i></div>
-          <h3>About Us</h3>
-        </div>
-        <p>EduLearn is a platform dedicated to making education accessible to everyone.</p>
-        <p>We provide high-quality courses taught by industry experts, helping learners achieve their goals and advance their careers.</p>
-      </div>
+<section class="section">
 
-      <div class="info-card" id="contact">
-        <div class="card-header">
-          <div class="card-icon icon-green"><i class="fas fa-envelope"></i></div>
-          <h3>Contact Us</h3>
-        </div>
-        <p>Email: <a href="mailto:support@edulearn.com">support@edulearn.com</a></p>
-        <p>Phone: +1 (555) 123-4567</p>
-      </div>
+<h2 class="section-title">Featured Learning Paths</h2>
 
-    </div>
-  </section>
+<div class="courses">
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 EduLearn. All rights reserved.</p>
-    <p>Follow us on social media</p>
-  </footer>
+<div class="card">
+<div class="icon">
+<i class="fa-solid fa-code"></i>
+</div>
+<h3>Web Development</h3>
+<p>
+Learn HTML, CSS, JavaScript, React, backend development, APIs,
+and deployment by building real-world projects.
+</p>
+<span class="tag">Beginner → Advanced</span>
+</div>
+
+<div class="card">
+<div class="icon">
+<i class="fa-solid fa-brain"></i>
+</div>
+<h3>Artificial Intelligence</h3>
+<p>
+Explore machine learning, neural networks, prompt engineering,
+and modern AI application development.
+</p>
+<span class="tag">Trending Career</span>
+</div>
+
+<div class="card">
+<div class="icon">
+<i class="fa-solid fa-chart-line"></i>
+</div>
+<h3>Data Science</h3>
+<p>
+Master Python, visualization, statistics, analytics,
+and predictive modeling using real datasets.
+</p>
+<span class="tag">High Demand</span>
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>120K+</h2>
+<p>Students Worldwide</p>
+</div>
+
+<div class="stat">
+<h2>450+</h2>
+<p>Interactive Lessons</p>
+</div>
+
+<div class="stat">
+<h2>98%</h2>
+<p>Student Satisfaction</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Learning Access</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 EduLearn Academy — Empowering Education Everywhere</p>
+</footer>
+
+<!-- SECRET BUTTON -->
+<div class="secret-btn" onclick="window.location.href='learn.html'"></div>
 
 </body>
 </html>
